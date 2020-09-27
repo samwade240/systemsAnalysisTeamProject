@@ -1,0 +1,142 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: url(/pictures/field.jpg) no-repeat;
+    background-size: cover;
+}
+
+p{
+    text-align: center;
+    color: floralwhite;
+    float: none;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+
+}
+
+img{
+    width: 1200px;
+    height: 1200p;
+}
+
+ul {
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url(/pictures/leather.png);
+    width: 100%;
+  }
+  
+footer{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url(/pictures/leather.png);
+    bottom: 0;
+    width: 100%;
+
+    text-align: center;
+    color: floralwhite;
+    float: none;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+
+  li {
+    float: left;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
+  
+  li a {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    display: block;
+    color: floralwhite;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+.slider-frame{
+    align-items: center;
+    overflow: hidden;
+    height: 800px;
+    width: 1200px;
+    margin-left: 360px;
+    margin-top: 20px;
+}
+
+.slide-images .border_box{
+    position: absolute;
+    border: 18px solid #402100; 
+    border-image: url(/pictures/leather.png) 30 round;
+    left: .005px;
+    right: .005px;
+    top: .005px;
+    bottom: .005px;
+}
+
+@-webkit-keyframes slide_animation{
+    0% {left: 0px;}
+    10% {left: 0px;}
+    20% {left: 1200px;}
+    30% {left: 1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px}
+    80% {left: 0px}
+    90% {left: 0px;}
+    1000% {left: 0px;}
+}
+@keyframes slide_animation{
+    0% {left: 0px;}
+    10% {left: 0px;}
+    20% {left: 1200px;}
+    30% {left: 1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px}
+    80% {left: 0px}
+    90% {left: 0px;}
+    1000% {left: 0px;}
+}
+
+.slide-images{
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+        animation-name: slide_animation;
+    -webkit-animation-duration: 30s;
+        animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+    -webkit-animation-play-state: running;
+        animation-play-state: running;
+}
+
+.img-container{
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: left;
+    border: 100px solid #402100 url(/pictures/leather.png);
+
+}
