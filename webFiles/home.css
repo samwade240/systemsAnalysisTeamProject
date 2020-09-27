@@ -5,6 +5,19 @@ body{
     background-size: cover;
 }
 
+h1{
+    text-align: center;
+    color: floralwhite;
+    float: none;
+    font-size: xxx-large;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    background-image: url(/pictures/wood.jpg);
+    margin-left: 430px;
+    margin-right: 360px;
+    position: relative;
+}
+
 p{
     text-align: center;
     color: floralwhite;
