@@ -88,12 +88,11 @@ footer{
     width: 1200px;
     margin-left: 360px;
     margin-top: 20px;
-}
+    border: 18px solid #402100; 
+    border-image: url(/pictures/wood3.png) 30 round;}
 
 .slide-images .border_box{
-    position: absolute;
-    border: 18px solid #402100; 
-    border-image: url(/pictures/leather.png) 30 round;
+
     left: .005px;
     right: .005px;
     top: .005px;
@@ -149,6 +148,6 @@ footer{
     width: 1200px;
     position: relative;
     float: left;
-    border: 100px solid #402100 url(/pictures/leather.png);
+
 
 }
