@@ -11,8 +11,8 @@ h1{
     float: none;
     font-size: xxx-large;
     font-family: 'Oswald', sans-serif;
+    text-shadow: 2px 2px 8px greenyellow;
     text-transform: uppercase;
-    background-image: url(/pictures/wood.jpg);
     margin-left: 430px;
     margin-right: 360px;
     position: relative;
@@ -89,7 +89,8 @@ footer{
     margin-left: 360px;
     margin-top: 20px;
     border: 18px solid #402100; 
-    border-image: url(/pictures/wood3.png) 30 round;}
+    border-image: url(/pictures/wood3.png) 30 round;
+}
 
 .slide-images .border_box{
 
