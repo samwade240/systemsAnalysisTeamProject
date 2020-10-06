@@ -39,7 +39,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url(/pictures/leather.png);
     width: 100%;
   }
   
@@ -48,7 +47,6 @@ footer{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url(/pictures/leather.png);
     bottom: 0;
     width: 100%;
 
