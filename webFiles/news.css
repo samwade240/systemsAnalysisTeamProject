@@ -8,12 +8,37 @@ body{
     background-size: cover;
   }
 
-  h1{
-    font-size: xxx-large;
-    color: white;
-    text-align: center;
-    border-color: #C8C8C8;
+
+
+  div.boxHeader{
+    background-color: #C8C8C8;
+    border: 1px solid white;
+    opacity: .9;    
+    margin-left: 300px;
+    margin-right: 300px;
   }
+
+  div.boxHeader h1{
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+  }
+
+  div.boxBody{
+    background-color: #C8C8C8;
+    border: 1px solid white;
+    opacity: .75;    
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+
+  div.boxBody p{
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+
+  }
+
 
   ul {
     top: 0;
