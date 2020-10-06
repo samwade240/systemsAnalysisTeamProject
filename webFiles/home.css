@@ -88,8 +88,7 @@ footer{
     width: 1200px;
     margin-left: 360px;
     margin-top: 20px;
-    border: 18px solid #402100; 
-    border-image: url(/pictures/wood3.png) 30 round;
+    border: 18px solid lightslategray; 
 }
 
 .slide-images .border_box{
