@@ -8,10 +8,10 @@
 </head>
 
 <ul>
-    <li><a href="/webFiles/home.html">Home</a></li>
-    <li><a href="/webFiles/News.html">News</a></li>
-    <li><a href="/webFiles/register.html">Register</a></li>
-    <li style="float:right; border-left:1px solid #bbb;" ><a href="/webFiles/login.html"> Log In</a></li>
+    <li><a href="/webFiles/home.php">Home</a></li>
+    <li><a href="/webFiles/news.php">News</a></li>
+    <li><a href="/webFiles/register.php">Register</a></li>
+    <li style="float:right; border-left:1px solid #bbb;" ><a href="/webFiles/login.php"> Log In</a></li>
 
 
 </ul>
