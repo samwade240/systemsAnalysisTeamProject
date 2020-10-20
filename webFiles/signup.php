@@ -2,13 +2,14 @@
 <head>
     <meta charset="utf-8">
     <title>Login Page</title>
-    <link rel="stylesheet" href="/webFiles/login.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <ul>
-    <li><a href="/webFiles/home.php">Home</a></li>
-    <li style="float:right; border-left:1px solid #bbb;" ><a href="/webFiles/login.php"> Log In</a></li>
+    <li><a href="home.php">Home</a></li>
+    <li style="float:right; border-left:1px solid #bbb;" ><a href="/systemsAnalysisTeamProject/webFiles/login.php"> Log In</a></li>
 </ul>
+
 
 <main>
     <div class="login-box">
@@ -33,7 +34,7 @@
             <div class="textbox">
             <input type="password" name="pass2" placeholder="Re-enter Password">
             </div>
-            <button type="submit" name="signup-submit" class="btn">Sign Up</button>
+            <button type="submit" name="signin-submit" class="btn">Sign Up</button>
             </form>
 
         </section>

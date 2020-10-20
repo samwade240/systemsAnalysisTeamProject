@@ -1,21 +1,16 @@
+<?php
+    require 'header.php'
+?>
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/webFiles/home.css">
+    <link rel="stylesheet" href="/systemsAnalysisTeamProject/webFiles/home.css">
     <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">    <title>Rae Riding Lessons</title>    
 </head>
-
-<ul>
-    <li><a href="/webFiles/home.php">Home</a></li>
-    <li><a href="/webFiles/news.php">News</a></li>
-    <li><a href="/webFiles/register.php">Register</a></li>
-    <li style="float:right; border-left:1px solid #bbb;" ><a href="/webFiles/login.php"> Log In</a></li>
-
-
-</ul>
-
 
 <body>
 
@@ -28,19 +23,19 @@
     <div class="slider-frame">
         <div class="slide-images">
             <div class="img-container" >
-                <img src="/pictures/img2.jpg">
+                <img src="/systemsAnalysisTeamProject/pictures/img2.jpg">
                 <div class="border_box"></div>
             </div>
               <div class="img-container">
-                  <img src="/pictures/img3.jpg">
+                  <img src="/systemsAnalysisTeamProject/pictures/img3.jpg">
                   <div class="border_box"></div>
                 </div>
               <div class="img-container">
-                <img src="/pictures/RaeRiding.png">
+                <img src="/systemsAnalysisTeamProject/pictures/RaeRiding.png">
                 <div class="border_box"></div>
               </div>
               <div class="img-container">
-                  <img src="/pictures/img4.jpg">
+                  <img src="/systemsAnalysisTeamProject/pictures/img4.jpg">
                   <div class="border_box"></div>
                 </div>
 

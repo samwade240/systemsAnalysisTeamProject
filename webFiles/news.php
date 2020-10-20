@@ -1,26 +1,21 @@
-<!DOCTYPE html>
+<?php
+    require 'header.php';
+?>
+
+
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Register</title>
-    <link rel="stylesheet" href="/webFiles/news.css">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">    <title>Rae Riding Lessons</title>    
+    <link rel="stylesheet" href="/systemsAnalysisTeamProject/webFiles/news.css">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">       
 
 </head>
 
 
 <body>
 
-
-    <ul>
-        <li><a href="/webFiles/home.php">Home</a></li>
-        <li><a href="/webFiles/news.php">News</a></li>
-        <li><a href="/webFiles/register.php">Register</a></li>
-        <li style="float:right; border-left:1px solid #bbb;" ><a href="/webFiles/login.php"> Log In</a></li>
-    
-    
-    </ul>
 <br>
 <br>
 
