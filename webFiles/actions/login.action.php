@@ -29,6 +29,11 @@ if(isset($_POST['login-submit'])){
                     session_start();
                     $_SESSION['userID'] = $row['ID'];
                     $_SESSION['userEMAIL'] = $row['EMAIL'];
+                    $_SESSION['userFIRST'] = $row['FIRST_NAME'];
+                    $_SESSION['userLAST'] = $row['LAST_NAME'];
+                    $_SESSION['userPHONE'] = $row['PHONE'];
+
+                    
                     header("Location: ../home.php?login=success");
                     exit();         
                 }
