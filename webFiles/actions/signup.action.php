@@ -8,6 +8,7 @@ if(isset($_POST["signin-submit"])){
     $email = $_POST['email'];
     $password = $_POST['pass'];
     $password2 = $_POST['pass2'];
+    $riderdef = 1;
 
     require 'db.action.php';
 
@@ -50,16 +51,16 @@ if(isset($_POST["signin-submit"])){
             }else{
             header("Location: ../signup.php?error=stmtfailed");
 
-            $sql = "INSERT INTO CLIENT(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, PHONE) VALUES(?,?,?,?,?)";
+            $sql = "INSERT INTO CLIENT(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD, PHONE, RIDER_LVL) VALUES(?,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt,$sql)){
                     header("Location: ../signup.php?error=stmtfailed");
                     exit();            
                 }else{
                     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "ssssi", $firstName,$lastName,$email,$hashedPwd,$phoneNumber);
+                    mysqli_stmt_bind_param($stmt, "ssssiii", $firstName,$lastName,$email,$hashedPwd,$phoneNumber, $riderdef);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../signup.php?signup=success");
+                    header("Location: ../home.php?signup=success");
                     exit();            
                 }
             }

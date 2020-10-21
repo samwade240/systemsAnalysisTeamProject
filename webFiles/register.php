@@ -123,9 +123,9 @@ class Calendar {
         if( ($this->currentDay!=0)&&($this->currentDay<=$this->daysInMonth) ){
              
             $this->currentDate = date('Y-m-d',strtotime($this->currentYear.'-'.$this->currentMonth.'-'.($this->currentDay)));
-             
+            
             $cellContent = $this->currentDay;
-             
+
             $this->currentDay++;   
              
         }else{
@@ -139,6 +139,7 @@ class Calendar {
         return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
                 ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
     }
+    
      
     /**
     * create navigation
@@ -225,14 +226,31 @@ class Calendar {
     }
      
 }
+
+
+
+
+/*
+
+highlights the current date
+
+if($this->currentDate == date('Y-m-d'))
+{
+$finalDisplay.= ''.$cellContent.'';
+
+}
+
+
+hide past days
+
+if($this->currentDate < date('Y-m-d'))
+{
+$finalDisplay= '<li class="this_past">' . $cellContent . '</li>' ;
+}
+
+*/
+
 ?>
-
-
-<html>
-<head>   
-<link href="register.css" type="text/css" rel="stylesheet" />
-</head>
-<body>
 <?php
  
 $calendar = new Calendar();
@@ -251,32 +269,3 @@ echo $calendar->show();
 
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

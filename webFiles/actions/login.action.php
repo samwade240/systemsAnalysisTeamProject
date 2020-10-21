@@ -38,8 +38,37 @@ if(isset($_POST['login-submit'])){
                     exit();         
                 }
             }else{
-                header("Location: ../login.php?error=wrongpwd");
-                exit();            
+                $sql = "SELECT * FROM EMPLOYEE WHERE EMAIL=?";
+                $stmt = mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt, $sql)){
+                    header("Location: ../login.php?error=sqlerror");
+                    exit();            
+                }else{
+                    mysqli_stmt_bind_param($stmt, "s", $email);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                    $row = mysqli_fetch_assoc($result);
+                    if($row){
+                        $pwdCheck = password_verify($password, $row['PASSWORD']);
+                        if($pwdCheck == false){
+                            header("Location: ../login.php?error=wrongpwdEMP");
+                            exit();          
+                        }else if($pwdCheck == true){
+                            session_start();
+                            $_SESSION['adminID'] = $row['ID'];
+                            $_SESSION['adminEMAIL'] = $row['EMAIL'];
+                            $_SESSION['adminFIRST'] = $row['FIRST_NAME'];
+                            $_SESSION['adminLAST'] = $row['LAST_NAME'];
+
+                            
+                            header("Location: ../home.php?login=successEMP");
+                            exit();         
+                        }
+                    }else{
+                        header("Location: ../login.php?error=wrongemail");
+                        exit();            
+                    }
+                }
             }
         }
     }
