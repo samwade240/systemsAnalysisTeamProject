@@ -14,10 +14,7 @@
 
 <body>
 
-    <h1>Rae <br>
-        Riding <br>
-        Lessons <br>
-    </h1>
+    <h1>Rae <br> Riding Lessons</h1>
 
 
     <div class="slider-frame">
@@ -44,22 +41,6 @@
 
 
 </body>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <footer>
     contact information:

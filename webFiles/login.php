@@ -21,7 +21,7 @@
             <input type="text" name="email" placeholder="Email">
             </div>
             <div class="textbox">
-            <input type="password" name="pass" placeholder="Password">
+            <input type="password" name="pass" placeholder="Password" autocomplete="new-password">
             </div>
             <button type="submit" name="login-submit" class="btn">Log In</button>
             </form>

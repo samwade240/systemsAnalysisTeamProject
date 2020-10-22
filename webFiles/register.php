@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require '../webFiles/actions/db.action.php';
 ?>
 
 <html>
@@ -108,6 +109,7 @@ class Calendar {
     * create the li element for ul
     */
     private function _showDay($cellNumber){
+
          
         if($this->currentDay==0){
              
@@ -128,16 +130,57 @@ class Calendar {
 
             $this->currentDay++;   
              
-        }else{
+        }
+        else{
              
             $this->currentDate =null;
  
             $cellContent=null;
         }
-             
-         
-        return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+
+        
+
+        // $aaaa = $_SESSION['userLevel'];
+        // echo $aaaa;
+
+
+
+        // $sql = "SELECT * FROM APPOINTMENT WHERE RIDE_DAY='2020-10-25' AND DAY_LVL='1'"; 
+        // $stmt = mysqli_stmt_init($conn);
+        
+        // if(!mysqli_stmt_prepare($stmt, $sql)){
+        //     printf(mysqli_connect_error());
+
+
+        // }else{
+        //     mysqli_stmt_execute($stmt);
+        //     $result = mysqli_stmt_get_result($stmt);
+        //     $arr = array();
+        //     $row = mysqli_fetch_assoc($result);
+
+        // }
+
+        if($this->currentDate < date('Y-m-d')){
+            return '<li id="this_past" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+            ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
+        }
+        // if($this->currentDate < date('Y-m-d') || $_SESSION['userLevel'] != $row['DAY_LVL']){
+        //     return '<li id="this_past" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+        //     ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
+        // }
+        // else if($this->currentDate > date('Y-m-d') && $row['CLIENT_ID'] == NULL){
+        //     return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+        //         ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
+        // }
+        // else if($this->currentDate > date('Y-m-d') && $row['CLIENT_ID'] == NULL){
+        //     return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+        //         ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
+        // }
+        else{
+            return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
                 ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
+        }
+        
     }
     
      
@@ -170,6 +213,7 @@ class Calendar {
         $content='';
          
         foreach($this->dayLabels as $index=>$label){
+
              
             $content.='<li class="'.($label==6?'end title':'start title').' title">'.$label.'</li>';
  

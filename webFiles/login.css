@@ -98,3 +98,27 @@ li a {
 li a:hover {
   background-color: darkgray;
 }
+
+.logoutbtn {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  display: block;
+  color: rgb(0, 0, 0);
+  float: right;
+  text-align: center;
+  padding: 14px 16px;
+  margin-top: 0px;
+  margin-right: 0px;
+  text-decoration: none;
+  background-color: rgb(255, 0, 0, 0);
+  border-left: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-right: 0px solid #bbb;
+  border-top: 0px solid #bbb;
+  font-size: 16px;
+
+}
+.logoutbtn:hover {
+  background-color: rgb(169, 169, 169);
+
+}

@@ -32,6 +32,9 @@ if(isset($_POST['login-submit'])){
                     $_SESSION['userFIRST'] = $row['FIRST_NAME'];
                     $_SESSION['userLAST'] = $row['LAST_NAME'];
                     $_SESSION['userPHONE'] = $row['PHONE'];
+                    $_SESSION['userEMNAME'] = $row['EMERGENCY_NAME'];
+                    $_SESSION['userEMPHONE'] = $row['EMERGENCY_PHONE'];
+                    $_SESSION['userLevel'] = $row['RIDER_LVL'];
 
                     
                     header("Location: ../home.php?login=success");
@@ -59,7 +62,6 @@ if(isset($_POST['login-submit'])){
                             $_SESSION['adminEMAIL'] = $row['EMAIL'];
                             $_SESSION['adminFIRST'] = $row['FIRST_NAME'];
                             $_SESSION['adminLAST'] = $row['LAST_NAME'];
-
                             
                             header("Location: ../home.php?login=successEMP");
                             exit();         

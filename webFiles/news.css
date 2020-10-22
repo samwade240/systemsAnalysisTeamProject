@@ -1,88 +1,112 @@
 
 body{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #C8C8C8;
-    background-image: url(/systemsAnalysisTeamProject/pictures/barn2.jpg);
-    background-size: cover;
-  }
-
-
-
-  div.boxHeader{
-    background-color: white;
-    border: 1px solid white;
-    opacity: .9;    
-    margin-left: 300px;
-    margin-right: 300px;
-  }
-
-  div.boxHeader h1{
-    font-weight: bold;
-    color: #000000;
-    text-align: center;
-  }
-
-  div.boxBody{
-    background-color: white;
-    border: 1px solid white;
-    opacity: .75;    
-    margin-left: 75px;
-    margin-right: 75px;
-  }
-
-  div.boxBody p{
-    font-weight: bold;
-    color: #000000;
-    text-align: center;
-
-  }
-
-
-  ul {
-    top: 0;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-footer{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-
-    text-align: center;
-    color: floralwhite;
-    float: none;
-    font-size: 25px;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-  }
-
-  li {
-    float: left;
-    border-right: 1px solid #bbb;
-    border-bottom: 1px solid #bbb;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #C8C8C8;
+  background-image: url(/systemsAnalysisTeamProject/pictures/barn2.jpg);
+  background-size: cover;
 }
-  
-  li a {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    display: block;
-    color: floralwhite;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
 
-  }
-  
-  li a:hover {
-    background-color: #111;
-  }
+
+
+div.boxHeader{
+  background-color: white;
+  border: 1px solid white;
+  opacity: .9;    
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+div.boxHeader h1{
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+
+div.boxBody{
+  background-color: white;
+  border: 1px solid white;
+  opacity: .75;    
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+div.boxBody p{
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+
+}
+
+
+ul {
+  top: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+footer{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+
+  text-align: center;
+  color: floralwhite;
+  float: none;
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+
+li a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  display: block;
+  color: floralwhite;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.logoutbtn {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  display: block;
+  color: rgb(0, 0, 0);
+  float: right;
+  text-align: center;
+  padding: 14px 16px;
+  margin-top: 0px;
+  margin-right: 0px;
+  text-decoration: none;
+  background-color: rgb(255, 0, 0, 0);
+  border-left: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-right: 0px solid #bbb;
+  border-top: 0px solid #bbb;
+  font-size: 16px;
+
+}
+.logoutbtn:hover {
+  background-color: rgb(169, 169, 169);
+
+}

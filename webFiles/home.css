@@ -1,3 +1,4 @@
+/*
 body{
     padding: 0;
     margin: 0;
@@ -223,5 +224,225 @@ footer{
     font-size: 18px;
     cursor: pointer;
     margin: 12px 0;
+  }*/
+
+
+
+
+
+
+
+
+  body{
+    padding: 0;
+    margin: 0;
+    background: url(/systemsAnalysisTeamProject/pictures/woods.jpeg.jpeg) no-repeat;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    color: black;
+    float: none;
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 2px 2px 8px lightgray;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+h2{
+    text-align: center;
+    color: black;
+    float: none;
+    font-size: xx-large;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 2px 2px 8px lightgray;
+    text-transform: uppercase;
+    position: relative;
+}
+
+p{
+    text-align: center;
+    color: black;
+    float: none;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+
+}
+
+img{
+    width: 800px;
+    height: 500px;
+}
+
+ul {
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
   }
+  
+footer{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+
+    text-align: center;
+    color: floralwhite;
+    float: none;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    position: fixed;
+  }
+
+  li {
+    float: left;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+}
+  
+  li a {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+  }
+  
+  li a:hover {
+    background-color: darkgray;
+  }
+
+.slider-frame{
+    align-items: center;
+    overflow: hidden;
+    height: 500px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border: 1px solid #C8C8C8; 
+}
+
+.slide-images .border_box{
+
+    left: .005px;
+    right: .005px;
+    top: .005px;
+    bottom: .005px;
+}
+
+@-webkit-keyframes slide_animation{
+    0% {left: 0px;}
+    10% {left: 0px;}
+    20% {left: 800px;}
+    30% {left: 800px;}
+    40% {left: 1600px;}
+    50% {left: 1600px;}
+    60% {left: 800px;}
+    70% {left: 800px}
+    80% {left: 0px}
+    90% {left: 0px;}
+    100% {left: 0px;}
+}
+@keyframes slide_animation{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: 800px;}
+  30% {left: 800px;}
+  40% {left: 1600px;}
+  50% {left: 1600px;}
+  60% {left: 800px;}
+  70% {left: 800px}
+  80% {left: 0px}
+  90% {left: 0px;}
+  100% {left: 0px;}
+}
+
+.slide-images{
+    width: 2400px;
+    height: 500px;
+    margin: 0 0 0 -1600;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+        animation-name: slide_animation;
+    -webkit-animation-duration: 30s;
+        animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+    -webkit-animation-play-state: running;
+        animation-play-state: running;
+}
+
+.img-container{
+    position: relative;
+    float: left;
+}
+
+
+  .textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid floralwhite;
+    border-top: 1px solid floralwhite;
+    border-left: 1px solid floralwhite;
+    border-right: 1px solid floralwhite;
+    background-color: grey;
+  }
+  .textbox i{
+    width: 26px;
+    float: left;
+    text-align: center;
+  }
+  .textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    float: left;
+    margin: 0 10px;
+  }
+  .logoutbtn {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    display: block;
+    color: rgb(0, 0, 0);
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    margin-top: 0px;
+    margin-right: 0px;
+    text-decoration: none;
+    background-color: rgb(255, 0, 0, 0);
+    border-left: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-right: 0px solid #bbb;
+    border-top: 0px solid #bbb;
+    font-size: 16px;
+
+  }
+  .logoutbtn:hover {
+    background-color: rgb(169, 169, 169);
+
+  }
+  
   
