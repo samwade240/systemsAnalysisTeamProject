@@ -13,7 +13,6 @@ if(isset($_POST["change-submit"])){
     $password2 = $_POST['passToChange2'];
     $ID = $_POST['uid'];
 
-    require 'db.action.php';
 
     $sqlStart="UPDATE CLIENT SET ";
     $sql="";

@@ -12,9 +12,19 @@
 
 
 <main>
+    <?php
+                if(isset($_GET['error'])){
+                    if($_GET['error'] == "emptyfields"){
+                        echo '<p>Fill in all fields!</p>';
+                    }else if($_GET['error'] == "wrongpwd"){
+                        echo '<p>Wrong Password!</p>';
+                    }else if($_GET['error'] == "wrongemail"){
+                        echo '<p>Wrong Password!</p>';
+                    }
+                }
+    ?>
     <div class="login-box">
         <section>
- 
             <h1>Log In</h1>
             <form action="actions/login.action.php" method="post">
             <div class="textbox">

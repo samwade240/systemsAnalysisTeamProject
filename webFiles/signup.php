@@ -12,7 +12,30 @@
 
 
 <main>
-    <div class="login-box">
+    <?php
+                if(isset($_GET['error'])){
+                    if($_GET['error'] == "emptyfields"){
+                        echo '<p>Fill in all fields!</p>';
+                    }else if($_GET['error'] == "invalidemailfirstlastphoneemnameemphone"){
+                        echo '<p>Invalid First Name, Last Name, Email, Phone Number, Emergency Name, and Emergency Phone!</p>';
+                    }else if($_GET['error'] == "invalidemail"){
+                        echo '<p>Invalid Email!</p>';
+                    }else if($_GET['error'] == "invalidfirstName"){
+                        echo '<p>Invalid First Name!</p>';
+                    }else if($_GET['error'] == "invalidlastName"){
+                        echo '<p>Invalid Last Name!</p>';
+                    }else if($_GET['error'] == "invalidphone"){
+                        echo '<p>Invalid Phone Number!</p>';
+                    }else if($_GET['error'] == "invalidemergency"){
+                        echo '<p>Invalid Emergency Name!</p>';
+                    }else if($_GET['error'] == "invalidemphone"){
+                        echo '<p>Invalid Emergency Phone Number!</p>';
+                    }else if($_GET['error'] == "passwordcheck"){
+                        echo '<p>Passwords Do Not Match!</p>';
+                    }            
+                }
+    ?>
+    <div class="signup-box">
         <section>
             <h1>Sign Up</h1>
             <form action="actions/signup.action.php" method="post">
@@ -45,4 +68,5 @@
 
         </section>
     </div>
+    
 </main>

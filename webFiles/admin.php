@@ -15,7 +15,7 @@
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../client.php?error=sqlerror");
-            exit();            
+            exit();
         }else{
             mysqli_stmt_bind_param($stmt, "s", $_SESSION["adminID"]);
             mysqli_stmt_execute($stmt);
@@ -27,13 +27,13 @@
             while($row = mysqli_fetch_assoc($result)){
 
                 if($row['RIDE_DAY'] > $currDate){
-                    $arr[]=$row['RIDE_DAY'];   
+                    $arr[]=$row['RIDE_DAY'];
                 }
             }
             if(empty($arr)){
                 $arr[0] = "Not scheduled yet";
             }
-            $_SESSION['userRIDEDAYSMALLEST'] = min($arr);   
+            $_SESSION['userRIDEDAYSMALLEST'] = min($arr);
         }
     ?>
 
@@ -47,10 +47,10 @@
             public $email;
             public $phone;
             public $riderLvl;
-            public $notes; 
+            public $notes;
         }
 
-        echo "<form method= 'POST'> 
+        echo "<form method= 'POST'>
                  <div class='textbox'>
                  <input type='text' name='search' placeholder='Client Lookup'>
                  </div>
@@ -81,13 +81,13 @@
                     $tmp->notes = $row['NOTES'];
                     $arr[] = $tmp;
                 }
-    
+
                 foreach($arr as $value){
                     echo "<div class='grid-container'>";
                     echo "<form method='post'";
                     if($value->riderLvl == 1){
                         echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                        " |   
+                        " |
                         <select name='riderlevel' id='riderlevel'>
                             <optgroup label='Riding Level'>
                                 <option value='1'>Beginner</option>
@@ -95,12 +95,12 @@
                                 <option value='3'>Advanced</option>
                             </optgroup>
                         </select>".
-                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                         <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
 
                     }else if($value->riderLvl == 2){
                         echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                        " |   
+                        " |
                         <select name='riderlevel' id='riderlevel'>
                             <optgroup label='Riding Level'>
                                 <option value='2'>Intermediate</option>
@@ -108,11 +108,11 @@
                                 <option value='3'>Advanced</option>
                             </optgroup>
                         </select>".
-                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                         <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
                     }else if($value->riderLvl == 3){
                         echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                        " |   
+                        " |
                         <select name='riderlevel' id='riderlevel'>
                             <optgroup label='Riding Level'>
                             <option value='3'>Advanced</option>
@@ -120,7 +120,7 @@
                             <option value='2'>Intermediate</option>
                             </optgroup>
                         </select>".
-                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                         <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
                     }
                     echo "</form>";
@@ -134,13 +134,13 @@
                         $stmt = mysqli_stmt_init($conn);
                         if(!mysqli_stmt_prepare($stmt,$sql)){
                                 header("Location: ../admin.php?error=stmtfailed");
-                                exit();            
+                                exit();
                         }else{
                                 mysqli_stmt_bind_param($stmt, "is", $rideChange, $note);
                                 mysqli_stmt_execute($stmt);
                                 header("Location: ../webFiles/admin.php");
-                                exit();            
-                        }                        
+                                exit();
+                        }
 
 
                         unset($_POST['change-submit']);
@@ -152,7 +152,7 @@
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
                     header("Location: ../admin.php?error=sqlerror");
-                    exit();            
+                    exit();
                 }else{
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
@@ -172,12 +172,12 @@
                         $tmp->notes = $row['NOTES'];
                         $arr[] = $tmp;
                     }
-        
+
                     foreach($arr as $value){                    echo "<div class='grid-container'>";
                         echo "<form method='post'";
                         if($value->riderLvl == 1){
                             echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                            " |   
+                            " |
                             <select name='riderlevel' id='riderlevel'>
                                 <optgroup label='Riding Level'>
                                     <option value='1'>Beginner</option>
@@ -185,12 +185,12 @@
                                     <option value='3'>Advanced</option>
                                 </optgroup>
                             </select>".
-                            "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                            "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                             <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
-    
+
                         }else if($value->riderLvl == 2){
                             echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                            " |   
+                            " |
                             <select name='riderlevel' id='riderlevel'>
                                 <optgroup label='Riding Level'>
                                     <option value='2'>Intermediate</option>
@@ -198,11 +198,11 @@
                                     <option value='3'>Advanced</option>
                                 </optgroup>
                             </select>".
-                            "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                            "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                             <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
                         }else if($value->riderLvl == 3){
                             echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                            " |   
+                            " |
                             <select name='riderlevel' id='riderlevel'>
                                 <optgroup label='Riding Level'>
                                 <option value='3'>Advanced</option>
@@ -210,42 +210,42 @@
                                 <option value='2'>Intermediate</option>
                                 </optgroup>
                             </select>".
-                            "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                            "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                             <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
                         }
                         echo "</form>";
                         echo "</div>";
-    
+
                         if(isset($_POST['change-submit'])){
                             $rideChange = $_POST['riderlevel'];
                             $note = $_POST['notesToChange'];
-    
+
                             $sql = "UPDATE  CLIENT SET RIDER_LVL=?, NOTES=? WHERE EMAIL='$value->email'";
                             $stmt = mysqli_stmt_init($conn);
                             if(!mysqli_stmt_prepare($stmt,$sql)){
                                     header("Location: ../admin.php?error=stmtfailed");
-                                    exit();            
+                                    exit();
                             }else{
                                     mysqli_stmt_bind_param($stmt, "is", $rideChange, $note);
                                     mysqli_stmt_execute($stmt);
                                     header("Location: ../webFiles/admin.php");
-                                    exit();            
-                            }                        
-    
-    
+                                    exit();
+                            }
+
+
                             unset($_POST['change-submit']);
                         }
 
                     }
-        
+
                 }
             }
-        }else{       
+        }else{
             $sql = "SELECT * FROM CLIENT ";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 header("Location: ../admin.php?error=sqlerror");
-                exit();            
+                exit();
             }else{
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
@@ -265,13 +265,13 @@
                     $tmp->notes = $row['NOTES'];
                     $arr[] = $tmp;
                 }
-    
+
                 foreach($arr as $value){
                     echo "<div class='grid-container'>";
                     echo "<form method='post'";
                     if($value->riderLvl == 1){
                         echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                        " |   
+                        " |
                         <select name='riderlevel' id='riderlevel'>
                             <optgroup label='Riding Level'>
                                 <option value='1'>Beginner</option>
@@ -279,12 +279,12 @@
                                 <option value='3'>Advanced</option>
                             </optgroup>
                         </select>".
-                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                         <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
 
                     }else if($value->riderLvl == 2){
                         echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                        " |   
+                        " |
                         <select name='riderlevel' id='riderlevel'>
                             <optgroup label='Riding Level'>
                                 <option value='2'>Intermediate</option>
@@ -292,11 +292,11 @@
                                 <option value='3'>Advanced</option>
                             </optgroup>
                         </select>".
-                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                         <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
                     }else if($value->riderLvl == 3){
                         echo "<div class='grid-item'> " . $value->first ." " . $value->last ." | " . $value->email ." | " . $value->phone .
-                        " |   
+                        " |
                         <select name='riderlevel' id='riderlevel'>
                             <optgroup label='Riding Level'>
                             <option value='3'>Advanced</option>
@@ -304,7 +304,7 @@
                             <option value='2'>Intermediate</option>
                             </optgroup>
                         </select>".
-                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>  
+                        "<div class'textbox'><textarea name='notesToChange' value=".$value->notes." cols='50' rows='10'></textarea></div>
                         <button type='submit' name='change-submit' class='btn'>Submit Changes</button>";
                     }
                     echo "</form>";
@@ -318,13 +318,13 @@
                         $stmt = mysqli_stmt_init($conn);
                         if(!mysqli_stmt_prepare($stmt,$sql)){
                                 header("Location: ../admin.php?error=stmtfailed");
-                                exit();            
+                                exit();
                         }else{
                                 mysqli_stmt_bind_param($stmt, "is", $rideChange, $note);
                                 mysqli_stmt_execute($stmt);
                                 header("Location: ../webFiles/admin.php");
-                                exit();            
-                        }                        
+                                exit();
+                        }
 
 
                         unset($_POST['change-submit']);
@@ -333,11 +333,58 @@
 
 
                 }
-    
+
             }
         }
-
-
- 
-
     ?>
+    <form method="post">
+        <div class="Datetextbox">
+            <input type="text" name="date" placeholder="Enter In Days Available in the format: YYYY-MM-DD">
+        </div>
+
+        <select name='riderlevel' id='riderlevel' class="selectRidLev">
+            <optgroup label='Riding Level'>
+                <option value='1'>Beginner</option>
+                <option value='2'>intermediate</option>
+                <option value='3'>Advanced</option>
+            </optgroup>
+        </select>
+
+        <select name='daytype' id='daytype' class="selectDayType">
+            <optgroup label='Day Type'>
+                <option value='1'>Single Rider</option>
+                <option value='2'>Group Lesson</option>
+            </optgroup>
+        </select>
+
+        <button type='submit' name='date-submit' class='Datebtn'>Submit Date</button>
+    </form>
+    <?php
+        if(isset($_POST['date-submit'])){
+            $dateToAdd = $_POST['date'];
+            $level = $_POST['riderlevel'];
+            $type = $_POST['daytype'];
+            $one = 1;
+            $null = NULL;
+
+            $sql = "INSERT INTO APPOINTMENT(`ID`, `DAY_LVL`, `DAY_TYPE`, `CLIENT_ID`, `CLIENT_ID2`, `EMPLOYEE_ID`, `CLIENT_NAME`, `CLIENT_CONTACT`, `CLIENT_NAME2`, `CLIENT_CONTACT2`, `RIDE_DAY`, `CANCELED`, `CANCELLATION_REASON`)
+            VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                echo "here";
+                exit();
+            }else{
+                mysqli_stmt_bind_param($stmt, "sssssssssssss",$null, $level, $type, $null, $null, $one, $null, $null, $null, $null, $dateToAdd, $one, $null);
+                mysqli_stmt_execute($stmt);
+                echo "Executed";
+                exit();
+            }
+
+        }
+    ?>
+
+    <div class="emailBox">
+        <h3>Email Content:</h3>
+        <textarea name="emailContent"  cols="110" rows="10"></textarea>
+    </div>
+

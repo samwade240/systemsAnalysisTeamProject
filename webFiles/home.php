@@ -14,6 +14,18 @@
 
 <body>
 
+    <?php
+                if(isset($_GET['signup'])){
+                    if($_GET['signup'] == "success"){
+                        echo "<p class='success'>You Are Signed Up!</p>";
+                    }
+                }else if(isset($_GET['login'])){
+                    if($_GET['login'] == "success"){
+                        echo "<p class='success'>You Are Logged In!</p>";
+                    }
+                }
+    ?>
+
     <h1>Rae <br> Riding Lessons</h1>
 
 

@@ -18,8 +18,8 @@ if(isset($_POST["signin-submit"])){
     if(empty($firstName) || empty($lastName) || empty($phoneNumber) || empty($email) || empty($password) || empty($password2)|| empty($emergencyName)|| empty($emergencyPhone)){
         header("Location: ../signup.php?error=emptyfields&first=".$firstName."&last=".$lastName."&phone=".$phoneNumber."&mail=".$email);
         exit();
-    }else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z]*$/", $firstName) && !preg_match("/^[a-zA-Z]*$/", $lastName) && !preg_match("/^[0-9]{11}$/", $phoneNumber)){
-        header("Location: ../signup.php?error=invalidemailfirstlastphone");
+    }else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z]*$/", $firstName) && !preg_match("/^[a-zA-Z]*$/", $lastName) && !preg_match("/^[0-9]{11}$/", $phoneNumber) && !preg_match("/^[a-zA-Z]*$/", $emergencyName) && !preg_match("/^[0-9]*$/", $emergencyPhone) ){
+        header("Location: ../signup.php?error=invalidemailfirstlastphoneemnameemphone");
         exit();
     }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         header("Location: ../signup.php?error=invalidemail&first=".$firstName."&last=".$lastName."&phone=".$phoneNumber ."&emname=".$emergencyName."&emphone=".$emergencyPhone);

@@ -54,7 +54,7 @@ if(isset($_POST['login-submit'])){
                     if($row){
                         $pwdCheck = password_verify($password, $row['PASSWORD']);
                         if($pwdCheck == false){
-                            header("Location: ../login.php?error=wrongpwdEMP");
+                            header("Location: ../login.php?error=wrongpwd");
                             exit();          
                         }else if($pwdCheck == true){
                             session_start();
@@ -63,7 +63,7 @@ if(isset($_POST['login-submit'])){
                             $_SESSION['adminFIRST'] = $row['FIRST_NAME'];
                             $_SESSION['adminLAST'] = $row['LAST_NAME'];
                             
-                            header("Location: ../home.php?login=successEMP");
+                            header("Location: ../home.php?login=success");
                             exit();         
                         }
                     }else{
