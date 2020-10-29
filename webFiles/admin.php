@@ -14,7 +14,7 @@
         $sql = "SELECT * FROM APPOINTMENT WHERE EMPLOYEE_ID=?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../client.php?error=sqlerror");
+            header("Location: ../webFiles/admin.php?error=sqlerror");
             exit();
         }else{
             mysqli_stmt_bind_param($stmt, "s", $_SESSION["adminID"]);
@@ -36,7 +36,6 @@
             $_SESSION['userRIDEDAYSMALLEST'] = min($arr);
         }
     ?>
-
     <h2>Your Next Class is on: <?php echo("{$_SESSION['userRIDEDAYSMALLEST']} "."<br />");?></h2>
 
     <?php
@@ -383,8 +382,65 @@
         }
     ?>
 
-    <div class="emailBox">
-        <h3>Email Content:</h3>
-        <textarea name="emailContent"  cols="110" rows="10"></textarea>
-    </div>
+    <form method="post">
+        <div class="emailBox">
+            <h3>Email:</h3>
+            <div>          
+                <input type="text" name="subject" placeholder="Subject Line">
+            </div>
+            <textarea name="emailContent"  cols="110" rows="10"></textarea>
+            <button type='submit' name='emailSend-submit' class='btn'>Send Email</button>
+        </div>
+    </form>
+    <?php
+
+        if(isset($_POST['emailSend-submit'])){
+            $subject = $_POST['subject'];
+            $content = $_POST['emailContent']; 
+
+            $sql = "SELECT * FROM CLIENT";
+            $stmt = mysqli_stmt_init($conn);
+
+            if(!mysqli_stmt_prepare($stmt, $sql)){
+                header("Location: ../webFiles/admin.php?error=sqlerror");
+                exit();            
+            }else{
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                while($row = mysqli_fetch_assoc($result)){
+                    $to = $row['EMAIL'];
+                    mail($to, $subject, $content);
+                }
+            }
+        }
+    
+    ?>
+
+    <form method="post">
+        <div class="newsBox">
+            <h3>News Post:</h3>
+            <textarea name="newspost"  cols="110" rows="10"></textarea>
+            <button type='submit' name='newsSend-submit' class='btn'>Post</button>
+        </div>
+    </form>
+    <?php
+        if(isset($_POST['newsSend-submit'])){
+
+            $newsPost = $_POST['newspost'];
+            $timezone = date_default_timezone_set('America/New_York');
+            $currDate = date('Y-m-d', time());
+
+            $sql = "INSERT INTO NEWS(NEWS_POST, DATE_POSTED) VALUE (?,?)";
+            $stmt = mysqli_stmt_init($conn);
+
+            if(!mysqli_stmt_prepare($stmt, $sql)){
+                exit();
+            }else{
+                mysqli_stmt_bind_param($stmt, "ss",$newsPost, $currDate);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+            }
+        }
+    ?>
+
 

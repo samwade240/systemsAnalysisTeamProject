@@ -34,6 +34,6 @@ if(isset($_POST["change-submit"])){
     }    
 
 }else{
-    header("Location: ../signup.php?failedbecauseofme");
+    header("Location: ../webFiles/signup.php?failedbecauseofme");
     exit();
 }

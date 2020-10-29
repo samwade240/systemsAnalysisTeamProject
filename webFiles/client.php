@@ -33,7 +33,7 @@
             if(empty($arr)){
                 $arr[0] = "The next day you sign up for";
             }
-            $_SESSION['userRIDEDAYSMALLEST'] = min($arr);   
+            $_SESSION['userRIDEDAYSMALLEST'] = date("d/m/Y", strtotime(min($arr)));
         }
     
     ?>

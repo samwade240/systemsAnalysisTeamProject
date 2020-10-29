@@ -24,15 +24,21 @@ div.boxHeader h1{
   text-align: center;
 }
 
-div.boxBody{
-  background-color: white;
-  border: 1px solid white;
-  opacity: .75;    
-  margin-left: 75px;
-  margin-right: 75px;
+.news-container {
+  display: grid;
+  padding: 10px;
+  width: 100%;
 }
 
-div.boxBody p{
+div.newsPost{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0px;
+  font-size: 15px;
+  text-align: center;
+}
+
+div.newsPost p{
   font-weight: bold;
   color: #000000;
   text-align: center;

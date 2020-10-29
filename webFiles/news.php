@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require '../webFiles/actions/db.action.php';
 ?>
 
 
@@ -19,26 +20,41 @@
 <br>
 <br>
 
-<div class="boxHeader">
-    <h1>News</h1>    
-</div>
+<?php
 
-<br>
-<br>
-<br>
+echo "<div class='boxHeader'>
+        <h1>News</h1>    
+      </div>";
 
-<div class="boxBody">
-    <p>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-        This is a temporary entry. The information here in the finished product will be a news entry by admin user. <br>
-    </p>
-</div>
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+    $sql = "SELECT * FROM NEWS ORDER BY DATE_POSTED DESC";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("Location: ../webFiles/news.php?error=sqlerror");
+        exit();            
+    }else{
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        echo "<div class='news-container'>";
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<div class='newsPost'>
+                    <p>".
+                    date("d/m/Y", strtotime($row['DATE_POSTED']))
+                    ."</p>".
+                    $row['NEWS_POST']
+                  ."</div>";
+        }
+        echo "</div>";
+    }    
+
+
+
+?>
 
 </body>
 
