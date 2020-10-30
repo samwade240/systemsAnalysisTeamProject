@@ -17,7 +17,7 @@
     if(isset($_SESSION['userID'])){    
         echo'<li><a href="/systemsAnalysisTeamProject/webFiles/register.php">Register</a></li>';
         echo '<li><a href="/systemsAnalysisTeamProject/webFiles/client.php">Client Page</a></li>';
-        echo '<form action="../webFiles/actions/logout.action.php" method="post">
+        echo '<form action="../actions/logout.action.php" method="post">
         <button type="submit" name="logout-submit" class="logoutbtn">Log Out</button>
         </form>'; 
     }else if(isset($_SESSION['adminID'])){
