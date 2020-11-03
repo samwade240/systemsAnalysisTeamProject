@@ -1,6 +1,6 @@
 <?php
     require 'header.php';
-    require '../webFiles/actions/db.action.php';
+    require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
 ?>
     <style><?php require 'client.css'?></style>
 
@@ -14,7 +14,7 @@
         $sql = "SELECT * FROM APPOINTMENT WHERE CLIENT_ID=?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../client.php?error=sqlerror");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=sqlerror");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $_SESSION["userID"]);
@@ -86,13 +86,13 @@
     $password = $_POST['passToChange'];
     $password2 = $_POST['passToChange2'];
 
-    require '../webFiles/actions/db.action.php';
+    require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
 
     if(!empty($firstName) && preg_match("/^[a-zA-Z]*$/", $firstName)){
         $sql = "UPDATE CLIENT SET FIRST_NAME=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../client.php?error=stmtfailedFirst");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedFirst");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $firstName);
@@ -103,7 +103,7 @@
         $sql = "UPDATE CLIENT SET LAST_NAME=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../client.php?error=stmtfailedLast");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedLast");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $lastName);
@@ -114,7 +114,7 @@
         $sql = "UPDATE CLIENT SET LAST_NAME=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../client.php?error=stmtfailedemname");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedemname");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $emName);
@@ -125,7 +125,7 @@
         $sql = "UPDATE CLIENT SET PHONE=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../client.php?error=stmtfailedemphone");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedemphone");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $emPhone);
@@ -136,7 +136,7 @@
         $sql = "UPDATE CLIENT SET PHONE=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../client.php?error=stmtfailedPhone");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedPhone");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $phoneNumber);
@@ -147,7 +147,7 @@
         $sql = "UPDATE CLIENT SET EMAIL=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../client.php?error=stmtfailedEmail");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedEmail");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $email);
@@ -159,7 +159,7 @@
         $sql = "UPDATE CLIENT SET PASSWORD=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location: ../client.php?error=stmtfailedPass");
+            header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedPass");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $hashedPwd);
@@ -167,7 +167,7 @@
         }
     }   
 
-    header("Location: ../client.php");
+    header("Location: /systemsAnalysisTeamProject/webFiles/client.php");
     exit();
 }
         

@@ -7,13 +7,13 @@ if(isset($_POST['login-submit'])){
     $password = $_POST['pass'];
 
     if(empty($email) || empty($password)){
-        header("Location: ../login.php?error=emptyfields");
+        header("Location: /systemsAnalysisTeamProject/webFiles/login.php?error=emptyfields");
         exit();
     }else{
         $sql = "SELECT * FROM CLIENT WHERE EMAIL=?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../login.php?error=sqlerror");
+            header("Location: /systemsAnalysisTeamProject/webFiles/login.php?error=sqlerror");
             exit();            
         }else{
             mysqli_stmt_bind_param($stmt, "s", $email);
@@ -23,7 +23,7 @@ if(isset($_POST['login-submit'])){
             if($row){
                 $pwdCheck = password_verify($password, $row['PASSWORD']);
                 if($pwdCheck == false){
-                    header("Location: ../login.php?error=wrongpwd");
+                    header("Location: /systemsAnalysisTeamProject/webFiles/login.php?error=wrongpwd");
                     exit();          
                 }else if($pwdCheck == true){
                     session_start();
@@ -37,14 +37,14 @@ if(isset($_POST['login-submit'])){
                     $_SESSION['userLevel'] = $row['RIDER_LVL'];
 
                     
-                    header("Location: ../home.php?login=success");
+                    header("Location: /systemsAnalysisTeamProject/webFiles/home.php?login=success");
                     exit();         
                 }
             }else{
                 $sql = "SELECT * FROM EMPLOYEE WHERE EMAIL=?";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
-                    header("Location: ../login.php?error=sqlerror");
+                    header("Location: /systemsAnalysisTeamProject/webFiles/login.php?error=sqlerror");
                     exit();            
                 }else{
                     mysqli_stmt_bind_param($stmt, "s", $email);
@@ -54,7 +54,7 @@ if(isset($_POST['login-submit'])){
                     if($row){
                         $pwdCheck = password_verify($password, $row['PASSWORD']);
                         if($pwdCheck == false){
-                            header("Location: ../login.php?error=wrongpwd");
+                            header("Location: /systemsAnalysisTeamProject/webFiles/login.php?error=wrongpwd");
                             exit();          
                         }else if($pwdCheck == true){
                             session_start();
@@ -62,12 +62,14 @@ if(isset($_POST['login-submit'])){
                             $_SESSION['adminEMAIL'] = $row['EMAIL'];
                             $_SESSION['adminFIRST'] = $row['FIRST_NAME'];
                             $_SESSION['adminLAST'] = $row['LAST_NAME'];
+                            $_SESSION['adminEMAIL_TOGGLE'] = $row['EMAIL_TOGGLE'];
+                            $_SESSION['adminTEXT_TOGGLE'] = $row['TEXT_TOGGLE'];
                             
-                            header("Location: ../home.php?login=success");
+                            header("Location: /systemsAnalysisTeamProject/webFiles/home.php?login=success");
                             exit();         
                         }
                     }else{
-                        header("Location: ../login.php?error=wrongemail");
+                        header("Location: /systemsAnalysisTeamProject/webFiles/login.php?error=wrongemail");
                         exit();            
                     }
                 }
@@ -77,6 +79,6 @@ if(isset($_POST['login-submit'])){
 
 
 }else{
-    header("Location: ../login.php");
+    header("Location: /systemsAnalysisTeamProject/webFiles/login.php");
     exit();
 } 

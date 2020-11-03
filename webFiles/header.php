@@ -17,16 +17,16 @@
     if(isset($_SESSION['userID'])){    
         echo'<li><a href="/systemsAnalysisTeamProject/webFiles/register.php">Register</a></li>';
         echo '<li><a href="/systemsAnalysisTeamProject/webFiles/client.php">Client Page</a></li>';
-        echo '<form action="../actions/logout.action.php" method="post">
+        echo '<form action="/systemsAnalysisTeamProject/webFiles/actions/logout.action.php" method="post">
         <button type="submit" name="logout-submit" class="logoutbtn">Log Out</button>
         </form>'; 
     }else if(isset($_SESSION['adminID'])){
         echo '<li><a href="/systemsAnalysisTeamProject/webFiles/admin.php">Admin Page</a></li>';
-        echo '<form action="../webFiles/actions/logout.action.php" method="post">
+        echo '<form action="/systemsAnalysisTeamProject/webFiles/actions/logout.action.php" method="post">
         <button type="submit" name="logout-submit" class="logoutbtn">Log Out</button>
         </form>';  
     }else{
-        echo '<form action="../webFiles/login.php" method="post">
+        echo '<form action="/systemsAnalysisTeamProject/webFiles/login.php" method="post">
         <button type="submit" name="submit" class="logoutbtn">Log In</button>
         </form>';     
     }

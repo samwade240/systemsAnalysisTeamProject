@@ -1,6 +1,6 @@
 <?php
     require 'header.php';
-    require '../webFiles/actions/db.action.php';
+    require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
 ?>
 
 
@@ -34,7 +34,7 @@ echo "<br>";
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("Location: ../webFiles/news.php?error=sqlerror");
+        header("Location: /systemsAnalysisTeamProject/webFiles/news.php?error=sqlerror");
         exit();            
     }else{
         mysqli_stmt_execute($stmt);
@@ -44,7 +44,7 @@ echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
             echo "<div class='newsPost'>
                     <p>".
-                    date("d/m/Y", strtotime($row['DATE_POSTED']))
+                    date("m/d/Y", strtotime($row['DATE_POSTED']))
                     ."</p>".
                     $row['NEWS_POST']
                   ."</div>";
@@ -60,12 +60,6 @@ echo "<br>";
 
 
 
-<footer>
-    contact information:
-    <br>
-    Email: Temporary@gmail.com <br>
-    Location: 1234 East Main Street Charleston, South Carolina
-</footer>
 
 
 </html>

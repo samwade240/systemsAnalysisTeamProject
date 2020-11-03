@@ -3,4 +3,4 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../webFiles/home.php");
+header("Location: /systemsAnalysisTeamProject/webFiles/home.php");

@@ -2,7 +2,7 @@
 <?php
 
 require 'header.php';
-require '../webFiles/actions/db.action.php';
+require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
 
 if(isset($_GET['date'])){
     $date = $_GET['date'];
@@ -19,11 +19,11 @@ if(isset($_POST['submit'])){
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../bookSolo.php?error=sqlerror");
+            header("Location: /systemsAnalysisTeamProject/webFiles/bookSolo.php?error=sqlerror");
             exit();
         }else{
             mysqli_stmt_execute($stmt);
-            header("Location: ../webFiles/register.php?booking=success");
+            header("Location: /systemsAnalysisTeamProject/webFiles/register.php?booking=success");
             exit();
         }
     }

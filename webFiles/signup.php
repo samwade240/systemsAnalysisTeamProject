@@ -30,6 +30,8 @@
                         echo '<p>Invalid Emergency Name!</p>';
                     }else if($_GET['error'] == "invalidemphone"){
                         echo '<p>Invalid Emergency Phone Number!</p>';
+                    }else if($_GET['error'] == "passwordweak"){
+                        echo '<p>Password Too Weak!</p>';
                     }else if($_GET['error'] == "passwordcheck"){
                         echo '<p>Passwords Do Not Match!</p>';
                     }            

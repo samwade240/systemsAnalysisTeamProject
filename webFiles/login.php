@@ -26,7 +26,7 @@
     <div class="login-box">
         <section>
             <h1>Log In</h1>
-            <form action="actions/login.action.php" method="post">
+            <form action="/systemsAnalysisTeamProject/webFiles/actions/login.action.php" method="post">
             <div class="textbox">
             <input type="text" name="email" placeholder="Email">
             </div>
