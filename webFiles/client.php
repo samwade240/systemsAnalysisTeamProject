@@ -1,6 +1,6 @@
 <?php
     require 'header.php';
-    require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
+    require '../webFiles/actions/db.action.php';
 ?>
     <style><?php require 'client.css'?></style>
 
@@ -86,7 +86,7 @@
     $password = $_POST['passToChange'];
     $password2 = $_POST['passToChange2'];
 
-    require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
+    require '../webFiles/actions/db.action.php';
 
     if(!empty($firstName) && preg_match("/^[a-zA-Z]*$/", $firstName)){
         $sql = "UPDATE CLIENT SET FIRST_NAME=? WHERE ID=" . $_SESSION['userID'];

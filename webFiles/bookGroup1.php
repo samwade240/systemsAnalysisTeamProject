@@ -2,7 +2,7 @@
 <?php
 
 require 'header.php';
-require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
+require '../webFiles/actions/db.action.php';
 
 if(isset($_GET['date'])){
     $date = $_GET['date'];

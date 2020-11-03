@@ -1,6 +1,6 @@
 <?php
     require 'header.php';
-    require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
+    require '../webFiles/actions/db.action.php';
 ?>
     <style><?php require 'admin.css'?></style>
 
@@ -286,7 +286,6 @@
             }else{
                 mysqli_stmt_bind_param($stmt, "sssssssssssss",$null, $level, $type, $null, $null, $one, $null, $null, $null, $null, $dateToAdd, $one, $null);
                 mysqli_stmt_execute($stmt);
-                echo "Executed";
                 exit();
             }
 

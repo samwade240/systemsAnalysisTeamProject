@@ -1,6 +1,6 @@
 <?php
     require 'header.php';
-    require '/systemsAnalysisTeamProject/webFiles/actions/db.action.php';
+    require '../webFiles/actions/db.action.php';
 ?>
 
 <style><?php require 'register.css'?></style>
