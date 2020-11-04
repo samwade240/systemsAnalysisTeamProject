@@ -44,12 +44,11 @@
         <section>
             <h1>Change Information</h1>
             <form  method="post">
-            <input type="hidden" name="uid" value=<?php echo($_SESSION['userFIRST']); ?>>
             <div class="textbox">
-            <input type="text" name="first-nameToChange" value=<?php echo($_SESSION['userFIRST']); ?>>
+            <input placeholder="First Name" type="text" name="first-nameToChange" value=<?php echo($_SESSION['userFIRST']); ?>>
             </div>
             <div class="textbox">
-            <input type="text" name="last-nameToChange" value=<?php echo($_SESSION['userLAST']); ?>>
+            <input placeholder="Last Name" type="text" name="last-nameToChange" value=<?php echo($_SESSION['userLAST']); ?>>
             </div>
             <div class="textbox">
             <input type="text" name="phoneToChange" value=<?php echo($_SESSION['userPHONE']); ?>>
@@ -97,6 +96,7 @@
         }else{
             mysqli_stmt_bind_param($stmt, "s", $firstName);
             mysqli_stmt_execute($stmt);
+            $_SESSION['userFIRST'] = $firstName;
         }
     }   
     if(!empty($lastName) && preg_match("/^[a-zA-Z]*$/", $lastName)){
@@ -108,10 +108,11 @@
         }else{
             mysqli_stmt_bind_param($stmt, "s", $lastName);
             mysqli_stmt_execute($stmt);
+            $_SESSION['userLAST'] = $lastName;
         }
     }   
     if(!empty($emName) && preg_match("/^[a-zA-Z]*$/", $emName)){
-        $sql = "UPDATE CLIENT SET LAST_NAME=? WHERE ID=" . $_SESSION['userID'];
+        $sql = "UPDATE CLIENT SET EMERGENCY_NAME=? WHERE ID=" . $_SESSION['userID'];
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
             header("Location: /systemsAnalysisTeamProject/webFiles/client.php?error=stmtfailedemname");
@@ -119,6 +120,7 @@
         }else{
             mysqli_stmt_bind_param($stmt, "s", $emName);
             mysqli_stmt_execute($stmt);
+            $_SESSION['userEMNAME'] = $emName;
         }
     }  
     if(!empty($emPhone) && preg_match("/^[0-9]*$/", $emPhone)){
@@ -130,6 +132,7 @@
         }else{
             mysqli_stmt_bind_param($stmt, "s", $emPhone);
             mysqli_stmt_execute($stmt);
+            $_SESSION['userEMPHONE'] = $emPhone;
         }
     }    
     if(!empty($phoneNumber) && preg_match("/^[0-9]*$/", $phoneNumber)){
@@ -141,6 +144,7 @@
         }else{
             mysqli_stmt_bind_param($stmt, "s", $phoneNumber);
             mysqli_stmt_execute($stmt);
+            $_SESSION['userPHONE'] = $phoneNumber;
         }
     }   
     if(!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -152,8 +156,9 @@
         }else{
             mysqli_stmt_bind_param($stmt, "s", $email);
             mysqli_stmt_execute($stmt);
+            $_SESSION['EMAIL'] = $email; 
         }
-        }       
+    }       
     if(!empty($password) && !empty($password2) && $password == $password2){
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
         $sql = "UPDATE CLIENT SET PASSWORD=? WHERE ID=" . $_SESSION['userID'];
@@ -167,9 +172,10 @@
         }
     }   
 
-    header("Location: /systemsAnalysisTeamProject/webFiles/client.php");
+    header("Location: /systemsAnalysisTeamProject/webFiles/home.php");
     exit();
 }
+
         
 
 
