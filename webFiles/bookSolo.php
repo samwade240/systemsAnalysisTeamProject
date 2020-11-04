@@ -23,6 +23,11 @@ if(isset($_POST['submit'])){
             exit();
         }else{
             mysqli_stmt_execute($stmt);
+            $subject = "New Class!";
+            $content = "There is a new class scheduled for: " . $date ."with " . $cName;
+            //needs to be replaced with admin's email
+            $email = "admin@gmail.com";
+            mail($email, $subject, $content);
             header("Location: /systemsAnalysisTeamProject/webFiles/register.php?booking=success");
             exit();
         }

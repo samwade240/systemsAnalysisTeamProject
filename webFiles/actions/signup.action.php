@@ -30,7 +30,7 @@ if(isset($_POST["signin-submit"])){
     }else if(!preg_match("/^[a-zA-Z]*$/", $lastName)){
         header("Location: /systemsAnalysisTeamProject/webFiles/signup.php?error=invalidlastName&first=".$firstName."&phone=".$phoneNumber."&mail=".$email."&emname=".$emergencyName."&emphone=".$emergencyPhone);
         exit();
-    }else if(!preg_match("/^[a-zA-Z]*$/", $emergencyName)){
+    }else if(!preg_match("/^[a-zA-Z_ -]*$/", $emergencyName)){
         header("Location: /systemsAnalysisTeamProject/webFiles/signup.php?error=invalidemergency&first=".$firstName."&phone=".$phoneNumber."&mail=".$email."&emphone=".$emergencyPhone);
         exit();
     }else if(!preg_match("/^[0-9]*$/", $emergencyPhone)){

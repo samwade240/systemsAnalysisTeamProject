@@ -199,9 +199,10 @@
   }
 
   .toggle{
-    position: relative;
-    right: -42.5%;
+    position: absolute;
+    right: 22.5%;
     width: 20%;
+    top: 109%;
   }
 
   .togg{
@@ -238,3 +239,4 @@
     cursor: pointer;
     margin: 12px 0;
   }
+

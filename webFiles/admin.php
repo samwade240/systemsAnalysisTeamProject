@@ -256,8 +256,8 @@
         }
     ?>
 
+<div class="toggle">
 <h2>Email/Text Notification Settings:</h2>
-    <div class="toggle">
         <form method="post">
             <select name='emailToggle' id='emailToggle' class='togg'>
                 <optgroup label='Email Toggle'>

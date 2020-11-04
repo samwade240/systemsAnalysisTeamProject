@@ -1,6 +1,7 @@
 <?php
     require 'header.php';
     require '../webFiles/actions/db.action.php';
+    echo "    <style>"."<?php require 'admin.css'?>"."</style>";
 
     echo "<h2>Change Information for: </h2>";
 
@@ -19,7 +20,7 @@
         if($level == 1){
             echo "<div class='grid-item'> ";
             echo "<input type='hidden' name='mEmail' value='".$email."' >";
-            echo " |
+            echo " 
             <select name='riderlevel' id='riderlevel'>
                 <optgroup label='Riding Level'>
                     <option value='1'>Beginner</option>
@@ -33,7 +34,7 @@
         }else if($level == 2){
             echo "<div class='grid-item'> ";
             echo "<input type='hidden' name='mEmail' value='".$email."' >";
-            echo " |
+            echo " 
             <select name='riderlevel' id='riderlevel'>
                 <optgroup label='Riding Level'>
                     <option value='2'>Intermediate</option>
@@ -46,7 +47,7 @@
         }else if($level == 3){
             echo "<div class='grid-item'> ";
             echo "<input type='hidden' name='mEmail' value='".$email."' >";
-            echo " |
+            echo " 
             <select name='riderlevel' id='riderlevel'>
                 <optgroup label='Riding Level'>
                 <option value='3'>Advanced</option>

@@ -4,15 +4,13 @@ body{
   padding: 0;
   font-family: sans-serif;
   background-color: #C8C8C8;
-  background-image: url(/systemsAnalysisTeamProject/pictures/barn2.jpg);
+  background-image: url(/systemsAnalysisTeamProject/pictures/field.jpg);
   background-size: cover;
 }
 
 
 
 div.boxHeader{
-  background-color: white;
-  border: 1px solid white;
   opacity: .9;    
   margin-left: 300px;
   margin-right: 300px;
@@ -31,10 +29,12 @@ div.boxHeader h1{
 }
 
 div.newsPost{
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(0, 0, 0, 0.8);
+  width: 60%;
   padding: 0px;
   font-size: 15px;
+  margin: auto;
   text-align: center;
 }
 
